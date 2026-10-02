@@ -20,15 +20,20 @@ p{margin:1px 0;text-align:justify}
 </style></head><body>"""
 
 def build(two):
-    page_m, fs, lh, h2m = ("11mm 13mm","9.6pt","1.22","6px") if not two else ("14mm 16mm","10.3pt","1.32","9px")
+    page_m, fs, lh, h2m = ("11mm 13mm","9.6pt","1.22","6px") if not two else ("15mm 17mm","10.9pt","1.4","13px")
     h = HEAD % (page_m, fs, lh, h2m)
     h += """<h1>DINTAKURTHI ACHUTH</h1>
 <div class="sub">Data Scientist &nbsp;|&nbsp; Generative AI &amp; Machine Learning Engineer</div>
 <div class="ct">dintakurthiachuth@gmail.com &nbsp;•&nbsp; +919014262115 &nbsp;•&nbsp; Hyderabad, India</div>
-<div class="ct"><a href="#">LinkedIn</a> &nbsp;•&nbsp; <a href="https://techwithachuth.com">techwithachuth.com</a></div>
 <h2>Summary</h2>
 <p>Results-driven Data Scientist with 3+ years of experience building and deploying end-to-end ML and Generative AI solutions across the full lifecycle — data engineering, modeling, deployment and monitoring — at enterprise scale for Google. Strong in Python, SQL and Java, with deep hands-on work in LLMs, RAG architectures, vector search, fine-tuning (LoRA/QLoRA) and multi-agent systems. Experienced Java developer who can ship AI features inside production-grade full-stack applications. Focused on turning complex models into measurable business impact.</p>
-<h2>Professional Experience</h2>
+"""
+    if two:
+        h += """<h2>Core Competencies</h2>
+<ul><li><b>Generative AI engineering:</b> RAG, agentic workflows, fine-tuning (LoRA/QLoRA), evaluation and guardrails for production LLM systems.</li>
+<li><b>Applied ML &amp; analytics:</b> NLP, computer vision, embeddings and similarity search, statistics and experimentation, data storytelling for stakeholders.</li>
+<li><b>Engineering:</b> Java/Spring Boot and Python services, REST APIs, Docker/Kubernetes, CI/CD and cloud deployment on GCP and AWS.</li></ul>"""
+    h += """<h2>Professional Experience</h2>
 <div class="row"><span>Data Scientist</span><span>04/2023 – Present</span></div>
 <div class="org"><b>Virtusa (Deployed at Google)</b><span>Hyderabad, India</span></div><ul>
 <li><b>AI in Dashboard:</b> Built an LLM-powered natural-language query interface that uses SVM-based intent classification to translate plain-English questions into validated SQL, with schema-aware reasoning and interactive visualizations for non-technical stakeholders.</li>
@@ -54,16 +59,23 @@ def build(two):
 <li>Built a multimodal retrieval system with CLIP + FAISS to retrieve similar products from 50K+ records and auto-generate Amazon-style listings via the Claude API.</li>
 <li>Implemented hybrid BM25 + dense retrieval (<b>Precision@10 +18%</b>), enhanced visuals with Stable Diffusion/ControlNet, deployed via React + FastAPI; evaluated with MRR and Recall@K.</li>
 </ul>"""
-    h += """<div class="row"><span>Custom Linux Shell in Go</span><span>2025</span></div>"""
+    h += """<div class="row"><span>ResearchPilot — Multi-Agent Research &amp; Analytics Copilot</span><span>2025</span></div>
+<p class="tech">LangGraph • Claude / OpenAI APIs • RAG (Pinecone + BM25 rerank) • FastAPI • Redis • Docker • GCP</p><ul>
+<li>Built a LangGraph multi-agent system (planner, retriever, SQL-analyst, critic) that answers business questions over documents and warehouse tables, with cited sources and self-verification before responding.</li>
+<li>Added hybrid retrieval with reranking, tool-calling for SQL/Python execution, response caching in Redis and an LLM-as-judge evaluation harness (faithfulness, answer relevance, latency) to track quality across prompt and model changes.</li>"""
     if two:
-        h += '<p class="tech">Go • os/exec • Unit &amp; integration testing</p>'
-    h += """<ul><li>Built a Unix-like shell with a REPL engine, built-in commands (cd, pwd, echo, clear, exit) and external process spawning via os/exec with real-time stdout/stderr streaming.</li>
-<li>Handled edge cases (empty input, unknown commands, Ctrl+C) and validated cross-platform compatibility (Ubuntu 22.04 WSL2, macOS Ventura) via unit/integration tests and static analysis.</li></ul>"""
+        h += """<li>Exposed the pipeline as an async FastAPI service with streaming responses, request tracing and guardrails (PII masking, prompt-injection checks), containerised for deployment on GCP.</li>"""
+    h += "</ul>"
+    if two:
+        h += """<div class="row"><span>Domain LLM Fine-Tuning with QLoRA</span><span>2025</span></div>
+<p class="tech">HuggingFace Transformers • PEFT • QLoRA • bitsandbytes • PyTorch • Weights &amp; Biases</p><ul>
+<li>Fine-tuned an open-source LLM with 4-bit QLoRA on a curated instruction dataset, and benchmarked it against the base model and prompted API baselines on task accuracy, cost and latency.</li>
+<li>Built the data cleaning, deduplication and train/eval split pipeline, tracked experiments, and served the adapter locally via Ollama for low-cost inference.</li></ul>"""
     if two:
         h += """<div class="row"><span>Skin Cancer Classification using Convolutional Neural Networks</span><span>Research</span></div>
 <ul><li>Published research applying CNN-based image classification to skin lesion diagnosis, covering data preprocessing, model training and evaluation.</li></ul>"""
     h += """<h2>Technical Skills</h2><div class="sk">
-<p><b>Programming Languages:</b> Python, Java (Core Java, Spring Boot, JPA/Hibernate, JUnit), Scala, SQL, R, Go, JavaScript</p>
+<p><b>Programming Languages:</b> Python, Java (Core Java, Spring Boot, JPA/Hibernate, JUnit), Scala, SQL, R, JavaScript</p>
 <p><b>Generative AI:</b> LLMs, SLMs, Prompt Engineering, Fine-tuning (LoRA, QLoRA), RAG, LangChain, LangGraph, AI Agents, Multi-Agent Systems, LLMOps, Ollama</p>
 <p><b>Machine Learning &amp; Deep Learning:</b> Regression, Classification, Clustering, Dimensionality Reduction, CNNs, RNNs, LSTMs, GANs, Transformers, Autoencoders, Computer Vision, Object Detection, Image Segmentation, OCR, NER, Sentiment Analysis, Text Classification, PyTorch, TensorFlow, Scikit-learn, HuggingFace</p>
 <p><b>Data Analysis &amp; Big Data:</b> Pandas, NumPy, SciPy, PySpark, Apache Spark (Scala), EDA, Statistics, Hypothesis Testing, A/B Testing, Feature Engineering, Matplotlib, Seaborn, Plotly, Tableau, Power BI</p>
